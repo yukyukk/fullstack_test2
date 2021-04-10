@@ -1,0 +1,22 @@
+<h1>Mission Launch List</h1>
+<p>Daniel Lee 100517557</p>
+<div style = "padding: 13px;">
+    <mat-spinner *ngIf="missionList.length === 0"></mat-spinner>
+    <mat-card *ngFor = "let missionlist of missionList"
+        (click) = gotoMissionDetails(missionlist)>
+        <mat-card-header>
+            <mat-card-title>{{ missionlist['mission_name']}}</mat-card-title>
+            <mat-card-subtitle>{{ missionlist['launch_year'] }}</mat-card-subtitle>
+            <img mat-card-avatar src="{{missionlist['links']['mission_patch_small']}}">
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{ missionlist['details'] }}</p>
+            <!-- <button mat-raised-button color="primary" (click) = showDetails()>Toggle Details</button>
+                <!-- <a href = "<app-missiondetails missiondetails = '{{ missionlist['details'] }}'></app-missiondetails>" routerLink = "/mission-details" routerLinkActive="active">Details</a> -->
+
+            <!-- <div *ngIf="showDiv">
+                <app-missiondetails missiondetails = "{{ missionlist['details'] }}"></app-missiondetails>
+            </div> --> 
+        </mat-card-content>
+    </mat-card>
+</div>

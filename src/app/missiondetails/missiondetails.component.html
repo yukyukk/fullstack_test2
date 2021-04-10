@@ -1,0 +1,24 @@
+<h1>Mission Details</h1>
+<p>Daniel Lee 100517557</p>
+<div style = "padding: 13px;">
+    <!-- <mat-spinner *ngIf="typeof mission === 'undefined'"></mat-spinner> -->
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title><b>Mission Name: </b>{{ mission.name}}</mat-card-title>
+            <mat-card-subtitle><b>Launch Year: </b>{{ mission.launch_year}}</mat-card-subtitle>
+            <mat-card-title><b>Rocket </b></mat-card-title>
+            <mat-card-subtitle><b>Name: </b>{{ mission.rocket_name}}</mat-card-subtitle>
+            <mat-card-subtitle><b>Type: </b>{{ mission.rocket_type}}</mat-card-subtitle>
+            <mat-card-title><b>Launch Site: </b></mat-card-title>
+            <mat-card-subtitle><b>Name: </b>{{ mission.site_name }}</mat-card-subtitle>
+            <img mat-card-avatar src="{{ mission.mission_patch }}">
+        </mat-card-header>
+        <mat-card-title><b>Launch Details: </b></mat-card-title>
+        <mat-card-content>
+            <p>{{ mission.details }}</p>
+        </mat-card-content>
+        <mat-card-footer>
+            <a href = "{{ mission.wikipedia }}">Wikipedia</a>
+        </mat-card-footer>
+    </mat-card>
+</div>
